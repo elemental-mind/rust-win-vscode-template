@@ -1,0 +1,39 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "command": "cargo",
+            "args": [
+                "watch",
+                "-x",
+                "build"
+            ],
+            "group": "build",
+            "label": "rust-dev",
+            "problemMatcher": [
+                {
+                    "owner": "rust",
+                    "fileLocation": [
+                        "relative",
+                        "${workspaceRoot}"
+                    ],
+                    "pattern": {
+                        "regexp": "^(warning|error):\\s+(.*)$",
+                        "severity": 1,
+                        "message": 2
+                    },
+                    "background": {
+                        "activeOnStart": true,
+                        "beginsPattern": "^\\[Running 'cargo build'\\]",
+                        "endsPattern": "^\\[Finished running\\. Exit status: \\d+\\]"
+                    }
+                }
+            ],
+            "isBackground": true,
+            "runOptions": {
+                "runOn": "folderOpen"
+            }
+        },
+    ]
+}

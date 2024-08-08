@@ -1,0 +1,13 @@
+[package]
+# Modify your package name here
+name = "rust-windows-vscode-template"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+
+[[bin]]
+# Modify your binary name here and in the launch.json
+# currently this outputs program.exe
+name = "program"
+path = "source/main.rs"
